@@ -1,5 +1,5 @@
 package com.learnwithspeak;
-
+import android.os.Bundle;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -20,6 +20,11 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
+        }
+
+        @Override
+          protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(null);
         }
 
         @Override
