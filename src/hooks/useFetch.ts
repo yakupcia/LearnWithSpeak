@@ -12,7 +12,7 @@ interface IUseFetch {
 const useFetch = (props: IUseFetch) => {
   const {service, filter, responseKey = 'data'} = props;
 
-  const [data, setData] = React.useState<[]>([]);
+  const [data, setData] = React.useState<any[]>([]);
   const [status, setStatus] = React.useState<IStatus>('loading');
 
   React.useEffect(() => {
@@ -24,11 +24,12 @@ const useFetch = (props: IUseFetch) => {
       setStatus('loading');
       service(filter)
         .then(res => {
-          const d = _.get(res, responseKey);
+          const d: any = _.get(res, responseKey);
           if (d?.length === 0) setStatus('empty');
           else {
             setStatus('success');
-            setData(d ?? []);
+            if (filter?.page != 1) setData([...data, ...d]);
+            else setData(d ?? []);
           }
         })
         .catch(() => {

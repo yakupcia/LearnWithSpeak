@@ -1,8 +1,8 @@
 import AxiosInstance from './axios';
 
 class CharacterService {
-  getCharacters = async () => {
-    const response = await AxiosInstance.get('/character');
+  getCharacters = async (params: any) => {
+    const response = await AxiosInstance.get('/character', {params});
     return response;
   };
 

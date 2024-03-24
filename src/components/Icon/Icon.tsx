@@ -8,6 +8,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Material from 'react-native-vector-icons/MaterialIcons';
 
 // Types and Styles
 import { colors } from '../../styles';
@@ -27,6 +28,8 @@ const Icon = (props: IIconProps) => {
             return <Feather {...{ name, size, color }} />;
         case 'ion':
             return <Ionicons {...{ name, size, color }} />;
+        case 'mat':
+            return <Material {...{ name, size, color }} />;
         case 'matcomm':
             return <MaterialCommunityIcons {...{ name, size, color }} />;
         default:

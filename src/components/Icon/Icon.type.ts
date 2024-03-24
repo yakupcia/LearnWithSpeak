@@ -1,4 +1,4 @@
-type IIcon = 'ant' | 'entypo' | 'evil' | 'feather' | 'ion' | 'matcomm';
+type IIcon = 'ant' | 'entypo' | 'evil' | 'feather' | 'ion' | 'matcomm' | 'mat';
 
 interface IIconProps {
   type: IIcon;

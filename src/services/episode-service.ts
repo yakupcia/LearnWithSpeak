@@ -1,8 +1,8 @@
 import AxiosInstance from './axios';
 
 class EpisodeService {
-  getEpisodes = async () => {
-    const response = await AxiosInstance.get('/episode');
+  getEpisodes = async (params: any) => {
+    const response = await AxiosInstance.get('/episode', {params});
     return response;
   };
 

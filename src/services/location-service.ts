@@ -1,8 +1,8 @@
 import AxiosInstance from './axios';
 
 class LocationService {
-  getLocations = async () => {
-    const response = await AxiosInstance.get('/location');
+  getLocations = async (params: any) => {
+    const response = await AxiosInstance.get('/location', {params});
     return response;
   };
 
